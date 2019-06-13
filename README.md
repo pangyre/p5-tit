@@ -23,25 +23,13 @@ vain enough to not settle on one of the current microframeworks.
 
 # Methods
 
-# Models
+…
 
-Generic notes, several examples like the 10 in 10 and then–
+# To Do
 
-## Adaptors
+- Namespaces
 
-- DBIC
-
-# Views
-
-## Xslate
-
-[Text::Xslate](https://metacpan.org/pod/Text::Xslate), [Text::Xslate::Manual::Builtin](https://metacpan.org/pod/Text::Xslate::Manual::Builtin)
-
-[Text::Xslate::Bridge::Star](https://metacpan.org/pod/Text::Xslate::Bridge::Star)???
-
-## Plain/Text
-
-## JSON
+    Namespace, multi-instance of same app…? Relative URIs based on namespace?
 
 # Code Repository
 

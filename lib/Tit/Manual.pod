@@ -6,7 +6,7 @@
 
 Tit::Manual – Guide and cookbook for L<Tit>.
 
-=head1 Dispatch
+=head1 Controllers/Dispatch
 
 …
 
