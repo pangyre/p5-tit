@@ -20,9 +20,11 @@ Mention RFC:Toy? L<https://bitbucket.org/pangyre/rfc-toy>.
 
 =head2 POD viewer
 
+ t/apps/pod.psgi
+
 =head1 Code Repository
 
-L<http://github.com/pangyre/p5-tit>.
+L<http://github.com/pangyre/p5-tit>, private: L<https://bitbucket.org/pangyre/wren/>.
 
 =head1 See Also
 

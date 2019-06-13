@@ -893,55 +893,18 @@ Should rely on this: https://httpstatuses.com/
 
 =pod
 
+=encoding utf8
+
 =head1 Name
 
-Tit (paridæ, you pervert) - …as small as web frameworks get.
+Tit (paridæ, you pervert) – …a tiny bird of a web app framework.
 
 =head1 Synopsis
 
 This is a toy framework. If you want a real framework look at
 L<Mojolicious>, L<Catalyst>, L<Dancer2>, or similar packages.
 
-
-MOVE ALL TO MANUAL…
-
-=head1 Methods
-
-=head1 Models
-
-=head1 Views
-
-=head2 Xslate
-
-L<Text::Xslate>, L<Text::Xslate::Manual::Builtin>
-
-L<Text::Xslate::Bridge::Star>???
-
-=head1 See Also
-
-L<Flea>, L<Plack>.
-
-=head1 Copyright
-
-Ashley Pond V.
-
-=cut
-
-REST "some/route", $config; #?
-# instantiates…
-…No, right? REST should be an assumption, not an add on.
-
-
-TO DO
-namespace, multi-instance of same app…?
-
-=head1 Name
-
-Tit – A tiny bird of a web app framework.
-
-=head2 See instead…
-
-This is the document you really want: L<Tit::Manual>.
+See instead the document you really want: L<Tit::Manual>.
 
 =head1 Rationale and Caveat
 
@@ -952,6 +915,32 @@ want. It's alpha software until this notice is removed.
 Rationale? I've been doing this a loooooooong time. I'm curious about
 how little of it I really need for the things I write. I'm vain enough
 to not settle on one of the current microframeworks.
+
+=head1 Methods
+
+=head1 Models
+
+Generic notes, several examples like the 10 in 10 and then–
+
+=head2 Adaptors
+
+=over 4
+
+=item DBIC
+
+=back
+
+=head1 Views
+
+=head2 Xslate
+
+L<Text::Xslate>, L<Text::Xslate::Manual::Builtin>
+
+L<Text::Xslate::Bridge::Star>???
+
+=head2 Plain/Text
+
+=head2 JSON
 
 =head1 Code Repository
 
@@ -994,6 +983,15 @@ such holder or other party has been advised of the possibility of
 such damages.
 
 =cut
+
+REST "some/route", $config; #?
+# instantiates…
+…No, right? REST should be an assumption, not an add on.
+
+
+TO DO
+namespace, multi-instance of same app…?
+
 
 Not yet
 
