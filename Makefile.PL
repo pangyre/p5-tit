@@ -42,14 +42,5 @@ exit 0;
 
 __END__
 
-#test_requires "Plack::App::File" => undef;
-requires "Text::Xslate" => undef;
-requires "Type::Tiny" => undef;
-requires "Types::Standard" => undef;
-
-requires "YAML" => undef;
-requires "mro" => undef;
-requires "open" => undef;
-
 # TEST REQUIRES STUFF-
 # NO? Make the tests conditional?
