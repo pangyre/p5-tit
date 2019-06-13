@@ -254,7 +254,7 @@ package Tit v0.0.1 {
     # use Tit::REST;
 
     our $AUTHORITY  = "cpan:ASHLEY";
-    our $REPOSITORY = "https://bitbucket.org/pangyre/wren/";
+    our $REPOSITORY = "https://github.com/pangyre/p5-tit"; # Private -> "https://bitbucket.org/pangyre/wren/";
     our @ISA;
     push @ISA, "Exporter";
     
