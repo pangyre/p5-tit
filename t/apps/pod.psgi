@@ -2,7 +2,6 @@
 use utf8;
 use strictures;
 use Tit;
-use Moo;
 use Pod::Simple::Text;
 
 get "/pod/{module:.+}" => sub {
@@ -18,12 +17,6 @@ $tit->to_app;
 
 __END__
 
-#my $p = Pod::Simple::HTML->new;
-#$p->output_string(\my $html);
-#$p->parse_file('path/to/Module/Name.pm');
-#open my $out, '>', 'out.html' or die "Cannot open 'out.html': $!\n";
-#print $out $html;
-
 =pod
 
 =encoding utf8
@@ -35,5 +28,9 @@ pod.psgi – minimal POD viewer.
 =head1 Synopsis
 
  plackup -Ilib -r t/apps/pod.psgi
+
+=head1 To Do
+
+Apply content negotiation to give plain/text or text/html(?).
 
 =cut
