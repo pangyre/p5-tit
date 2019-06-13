@@ -16,11 +16,14 @@ Mention RFC:Toy? L<https://bitbucket.org/pangyre/rfc-toy>.
 
 =head2 MiniWiki
 
-=head2 Unicode Browser
+ t/apps/mini-wiki.psgi
+ t/lib/MiniWiki.pm
 
 =head2 POD viewer
 
  t/apps/pod.psgi
+
+=head2 Unicode Browser
 
 =head1 Code Repository
 
