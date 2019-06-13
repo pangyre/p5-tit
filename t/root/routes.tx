@@ -1,0 +1,16 @@
+: include "lib/header.tx";
+
+    <article>
+      <header>
+        <h1><: $title :></h1>
+      </header>
+      <div>
+        <h3>Routes</h3>
+        <div style="font-size:0.6rem; line-height:0.7rem">
+        : include "lib/routes.tx";
+        </div>
+      </div>
+    </article>
+
+: include "lib/footer.tx";
+

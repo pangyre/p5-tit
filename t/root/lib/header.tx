@@ -1,0 +1,112 @@
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title><: $title :></title>
+  <link rel="shortcut icon" href="<: $tit.static_uri("/favicon.ico") :>">
+  <style type="text/css" media="all">
+html, body {
+ width: 100%;
+ font-family:"helvetica neue", helvetica, sans-serif;
+ margin: 0;
+ padding: 0;
+ font-size:16px;
+ color:#001;
+}
+section.page {
+ height: 80%;
+ margin: 5% 25%;
+}
+footer, section > header {
+ color: rgba(0,33,66,0.5);
+}
+footer {
+  font-size: 0.8rem;
+}
+a { text-decoration: none }
+h1, h2, h3 { font-weight: 333; margin: 0.5rem 0 }
+article {
+  min-height: 40%;
+  box-shadow: 2px 3px 13px rgba(11,0,66,0.3);
+  border-radius: 0.5rem 0;
+  padding: 0.2rem 1rem 1rem 1rem;
+}
+article > div {
+  line-height: 125%;
+  font-size:0.95rem;
+}
+nav {
+ display:flex;
+ width:100%;
+ justify-content: space-between;
+ margin:0;
+ align-items: baseline;
+}
+nav form {
+ order:2;
+ margin:0;
+}
+nav ul {
+ order:1;
+  margin:0 0 0.25rem 0;;
+  padding:0;
+}
+nav li {
+  font-size:0.8rem;
+  display:inline;
+}
+nav li + li::before {
+  content: " · ";
+}
+form {
+  padding: .5rem 0;
+}
+textarea, input {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  line-height: 120%;
+  padding: 3px 5px;
+  border:1px solid rgba(0,0,0,0.2);
+  border-radius:2px;
+}
+nav input {
+  font-size: 0.66rem;
+  padding: 1px 4px;
+}
+nav input[type="text"] {
+  width: 9em;
+}
+input[type="text"] {
+  width: 43%;
+}
+textarea {
+  width:100%;
+  min-height:22rem;
+}
+.titles {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.titles div {
+  line-height: 140%;
+  border: 1px solid rgba(0,0,16,0.22);
+  border: 1px solid transparent;
+  margin: 0 1rem;
+  align-items: stretch;
+}
+.alert { color: #a00; }
+
+: include "lib/css.tx";
+  </style>
+</head>
+<body>
+  <section class="page">
+    <header>
+      <h3>
+        <: $tit.package :>
+      </h3>
+      <nav>
+: include "lib/nav.tx";
+      </nav>
+    </header>

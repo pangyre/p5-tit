@@ -1,0 +1,16 @@
+
+    <footer>
+<pre>
+          Tit · <: $tit :>
+        Route · <: $tit.route() :>
+  Action Path · <: $tit.route.action_path() :>
+</pre>
+      <div style="float:right; margin-top:-1rem">
+        <a class="button black" rel="nofollow" href="<: $tit.config("REPOSITORY") :>">Repo</a>
+      </div>
+    </footer>
+
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+: for $tit.router.routes -> $route {
+   : next if $route.args;
+   : next if $route.method != "GET";
+   : next if $route.action_path == "/page"; # We cover this with "New" below.
+   : next if $route.action_path == "/random"; # We cover this below.
+     <li><a href="<: $tit.uri_for( "/", $route.action_path ) :>"><: $route.action_path == "/" ? "Home" : $route.action_path  :></a></li>
+: }
+     <li><a href="<: $tit.uri_for_route("random") :>">Random</a></li>
+     <li><a href="<: $tit.uri_for_route("page") :>">New</a></li>
+  </ul>
+: include "lib/search_box.tx";
+</nav>

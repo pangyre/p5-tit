@@ -1,0 +1,17 @@
+:include "lib/header.tx";
+
+    <article>
+      <header>
+        <h1><b class="alert">Deleting</b> <a href="<: $tit.uri_for_route("page/*", [$title]) :>"><: $title :></a></h1>
+      </header>
+      <div>
+        <form method="POST" action="<: $page ? $tit.uri_for_route("page/*", [ $page.title ]) : $tit.uri_for_route("page") :>">
+          <input type="submit" name="x" value="DELETE" style="margin:1em auto; display:block" class="alert">
+          <input type="hidden" name="X-HTTP-Method-Override" value="DELETE">
+          <input type="hidden" name="title" value="<: $page.title :>">
+        </form>
+        <p class="alert">This cannot be undone!</p>
+      </div>
+    </article>
+
+:include "lib/footer.tx";

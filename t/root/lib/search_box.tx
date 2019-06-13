@@ -1,0 +1,7 @@
+  <form name="search" method="POST" action="<: $tit.uri_for_route("search") :>"
+     style="white-space:nowrap">
+     <div>
+       <input type="text" name="q" placeholder="…search" value="<: $q :>" style="display:inline">
+       <input type="submit" name="x" value="Go" style="display:inline;" class="button green">
+     </div>
+  </form>

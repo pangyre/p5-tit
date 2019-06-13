@@ -1,0 +1,13 @@
+: include "lib/header.tx";
+
+    <article>
+      <header>
+        <h1>Create a New Page</h1>
+      </header>
+      <div>
+       : include "lib/page_form.tx";
+      </div>
+    </article>
+
+: include "lib/footer.tx";
+

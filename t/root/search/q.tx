@@ -1,0 +1,23 @@
+:include "lib/header.tx";
+
+    <article>
+      <header>
+        <h1>Results searching for <span class="hot-highlight"><: $q :></span></h1>
+      </header>
+      <div>
+      : if $pages.size() {
+        <ul>
+        : for $pages -> $page {
+          <li><a href="<: $tit.uri_for_route("page/*", [ $page.title ]) :>"><: $page.title :></a></li>
+        : }
+        </ul>
+      : } elsif ( $total_pages ) {
+         No matches found.
+      : } else {
+         There are no pages to search yet…
+      : }
+      </div>
+    </article>
+
+:include "lib/footer.tx";
+

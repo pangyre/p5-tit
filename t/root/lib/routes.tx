@@ -1,0 +1,16 @@
+<ul>
+: for $tit.router.routes -> $route {
+    <li><: $route.method :> <: $route.action_path :>
+        <ul>
+    : if $route.args {
+           <li>args: <: $route.args | dump :></li>
+    : }
+:#           <li>defintion: <a href="<: $tit.uri_for_route( $route.action_path, $route.args ) :>"><: $route.definition :></a></li>
+                                              <!-- ^^^ this is apparently destroying the args anon-array but only when called with route object-->
+           <li>defintion: <: $route.definition :></li>
+           <li>action_path: <: $route.action_path :></li>
+           <li style="white-space:pre-wrap;font-family:monospace"><: $route.dump_code() :></li>
+        </ul>
+    </li>
+: }
+</ul>

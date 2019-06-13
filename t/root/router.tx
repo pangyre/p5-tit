@@ -1,0 +1,5 @@
+: include "lib/header.tx";
+
+: include "lib/routes.tx";
+
+: include "lib/footer.tx";

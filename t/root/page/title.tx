@@ -1,0 +1,14 @@
+: include "lib/header.tx";
+
+    <article>
+      <header>
+        <a class="blue button" href="<: $tit.uri_for_route("page/*/edit", [ $page.title ]) :>" style="float:right; font-size:0.66rem; margin:0 0 0 1em;opacity:0.8">edit</a>
+        <a class="red button" href="<: $tit.uri_for_route("page/*/delete", [ $page.title ]) :>" style="float:right; font-size:0.66rem; opacity: 0.8">delete</a>
+        <h1><: $title :></h1>
+      </header>
+      <div>
+      <: $page.content | marks | mark_raw :>
+      </div>
+    </article>
+
+: include "lib/footer.tx";

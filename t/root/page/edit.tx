@@ -1,0 +1,12 @@
+:include "lib/header.tx";
+
+    <article>
+      <header>
+        <h1><a href="<: $tit.uri_for_route("page/*", [$title]) :>"><: $title :></a></h1>
+      </header>
+      <div>
+       : include "lib/page_form.tx";
+      </div>
+    </article>
+
+:include "lib/footer.tx";
