@@ -5,7 +5,7 @@ use warnings;
 name "Tit";
 all_from "lib/Tit.pm";
 
-@ cpanfile;
+# cpanfile;
 # auto_install;? 
 
 requires "" => "";
