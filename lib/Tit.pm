@@ -534,7 +534,7 @@ package Tit v0.0.1 {
         my $path = decode("UTF-8", join("/", map { s/\{[^}]+\}/*/; $_ } $uri->path_segments), Encode::FB_CROAK);
         my $definition = decode("UTF-8", join("/", $uri->path_segments), Encode::FB_CROAK);
         my @args = $definition =~ /{([^:}]+)((?::[^}]+)?)}/g;
-        ( my $action_path = $definition ) =~ s/{([^:]+)(?::[^}]+)?}/*/g;
+        ( my $action_path = $definition ) =~ s/{([^:}]+)(?::[^}]+)?}/*/g;
 
         use List::Util "pairs";
         my $route = Tit::Route->new({ method => "GET",
