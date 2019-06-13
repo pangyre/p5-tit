@@ -10,20 +10,50 @@ Tit::Manual – Guide and cookbook for L<Tit>.
 
 …
 
+=head1 Models
+
+Generic notes, several examples like the 10 in 10 and then–
+
+=head2 Adaptors
+
+=over 4
+
+=item DBIC
+
+=item CHI(?)
+
+=back
+
+=head1 Views
+
+=head2 Xslate
+
+L<Text::Xslate>, L<Text::Xslate::Manual::Builtin>
+
+L<Text::Xslate::Bridge::Star>???
+
+=head2 Plain/Text
+
+=head2 JSON
+
 =head1 Toys
 
 Mention RFC:Toy? L<https://bitbucket.org/pangyre/rfc-toy>.
 
 =head2 MiniWiki
 
- t/apps/mini-wiki.psgi
+ plackup -I lib t/apps/mini-wiki.psgi
  t/lib/MiniWiki.pm
 
 =head2 POD viewer
 
+Plain text right now, might keep it that way(?).
+
  t/apps/pod.psgi
 
 =head2 Unicode Browser
+
+…note written…
 
 =head1 Code Repository
 

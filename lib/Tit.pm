@@ -920,29 +920,17 @@ vain enough to not settle on one of the current microframeworks.
 
 =head1 Methods
 
-=head1 Models
+…
 
-Generic notes, several examples like the 10 in 10 and then–
-
-=head2 Adaptors
+=head1 To Do
 
 =over 4
 
-=item DBIC
+=item Namespaces
+
+Namespace, multi-instance of same app…? Relative URIs based on namespace?
 
 =back
-
-=head1 Views
-
-=head2 Xslate
-
-L<Text::Xslate>, L<Text::Xslate::Manual::Builtin>
-
-L<Text::Xslate::Bridge::Star>???
-
-=head2 Plain/Text
-
-=head2 JSON
 
 =head1 Code Repository
 
@@ -989,11 +977,6 @@ such damages.
 REST "some/route", $config; #?
 # instantiates…
 …No, right? REST should be an assumption, not an add on.
-
-
-TO DO
-namespace, multi-instance of same app…?
-
 
 Not yet
 
