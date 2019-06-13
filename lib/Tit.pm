@@ -1,7 +1,7 @@
 use 5.14.0;
 use utf8;
 use strictures;
-# No? Right? Assumptions… use open ":std", ":encoding(utf8)";
+use open ":std", ":encoding(utf8)";
 use URI::QueryParam;
 $URI::DEFAULT_QUERY_FORM_DELIMITER = ";"; # YOU"RE NOT MY PROGRAMMING SUPERVISOR!
 
