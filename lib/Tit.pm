@@ -365,23 +365,6 @@ package Tit v0.0.1 {
         }
     }
 
-=head2 This is how add_model should work, from Wren draft…
-
-Maybe…
-
- add_model "NameSpace" =>
-     class => "My::Schema",
-     adaptor => "Tit::Model::DBIC", # An inline sub instead? A builder?
-     connect_info => [ "dbi:SQLite::memory:",
-                       undef,
-                       undef,
-                       { RaiseError => 1,
-                         AutoCommit => 1,
-                         ChopBlanks => 1,
-                         sqlite_unicode => 1, } ];
-
-=cut
-
     has _views =>
         is => "lazy",
         handles_via => "Hash",
@@ -509,21 +492,6 @@ Maybe…
         # print STDERR "Returned route -> ", $uri, $/;
         $uri;
     }
-
-=head1 Not yet
-
-    for my $method ( qw/ OPTIONS GET HEAD POST PUT DELETE TRACE CONNECT /)
-    {
-        push @EXPORT, my $lc = lc $method;
-        eval <<"";
-          sub $lc {
-              confess "Be serious" if \@_ > 3;
-              my \$path = shift;
-              my \$code = shift;
-              push \@raw_routes, join(" ", $method => \$path), \$code;
-          }
-
-=cut
 
     has request =>
         is => "rwp";
@@ -921,14 +889,9 @@ sub JSON::XS::TO_JSON { ref +shift }
 
 __END__
 
-
-__END__
-
 Should rely on this: https://httpstatuses.com/
 
 =pod
-
-=encoding utf8
 
 =head1 Name
 
@@ -971,9 +934,6 @@ REST "some/route", $config; #?
 
 TO DO
 namespace, multi-instance of same app…?
-=pod
-
-=encoding utf8
 
 =head1 Name
 
@@ -1034,3 +994,19 @@ such holder or other party has been advised of the possibility of
 such damages.
 
 =cut
+
+Not yet
+
+    for my $method ( qw/ OPTIONS GET HEAD POST PUT DELETE TRACE CONNECT /)
+    {
+        push @EXPORT, my $lc = lc $method;
+        eval <<"";
+          sub $lc {
+              confess "Be serious" if \@_ > 3;
+              my \$path = shift;
+              my \$code = shift;
+              push \@raw_routes, join(" ", $method => \$path), \$code;
+          }
+
+
+
