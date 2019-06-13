@@ -910,11 +910,13 @@ See instead the document you really want: L<Tit::Manual>.
 
 This is quite a bit like—but much less featureful than—lots of
 micro-frameworks and even L<Dancer2>. This is probably not what you
-want. It's alpha software until this notice is removed.
+want. It's alpha software until this notice is removed and it's raison
+d'être is sacrficial animal for a planned successor: Wren.
 
 Rationale? I've been doing this a loooooooong time. I'm curious about
-how little of it I really need for the things I write. I'm vain enough
-to not settle on one of the current microframeworks.
+how little of it I really need for the things I write and what
+applications can look like when stripped down to the essentials. I'm
+vain enough to not settle on one of the current microframeworks.
 
 =head1 Methods
 

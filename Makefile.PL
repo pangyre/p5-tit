@@ -35,7 +35,7 @@ requires "Scalar::Util" => "1.50";
 
 WriteAll;
 
-system "pod2markdown Tit README.md"
+system "pod2markdown lib/Tit.pm README.md"
     if $Module::Install::AUTHOR;
 
 exit 0;
