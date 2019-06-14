@@ -1,6 +1,6 @@
 # Name
 
-Tit (paridæ, you pervert) – …a tiny bird of a web app framework.
+Tit – paridæ, you pervert … a tiny bird of a web app framework.
 
 # Synopsis
 
@@ -12,9 +12,9 @@ See instead the document you really want: [Tit::Manual](https://metacpan.org/pod
 # Rationale and Caveat
 
 This is quite a bit like—but much less featureful than—lots of
-micro-frameworks and even [Dancer2](https://metacpan.org/pod/Dancer2). This is probably not what you
-want. It's alpha software until this notice is removed and it's raison
-d'être is sacrficial animal for a planned successor: Wren.
+micro-frameworks. This is probably not what you want. It's alpha
+software until this notice is removed and it's raison d'être is
+sacrficial animal for a planned successor: Wren.
 
 Rationale? I've been doing this a loooooooong time. I'm curious about
 how little of it I really need for the things I write and what
