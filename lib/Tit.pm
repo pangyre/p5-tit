@@ -897,7 +897,7 @@ Should rely on this: https://httpstatuses.com/
 
 =head1 Name
 
-Tit (paridæ, you pervert) – …a tiny bird of a web app framework.
+Tit – paridæ, you pervert … a tiny bird of a web app framework.
 
 =head1 Synopsis
 
@@ -909,9 +909,9 @@ See instead the document you really want: L<Tit::Manual>.
 =head1 Rationale and Caveat
 
 This is quite a bit like—but much less featureful than—lots of
-micro-frameworks and even L<Dancer2>. This is probably not what you
-want. It's alpha software until this notice is removed and it's raison
-d'être is sacrficial animal for a planned successor: Wren.
+micro-frameworks. This is probably not what you want. It's alpha
+software until this notice is removed and it's raison d'être is
+sacrficial animal for a planned successor: Wren.
 
 Rationale? I've been doing this a loooooooong time. I'm curious about
 how little of it I really need for the things I write and what
