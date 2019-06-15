@@ -230,6 +230,7 @@ package Tit::Router {
 
     sub DEMOLISH { # This is all it took to fix the R3 free unreferenced SV / exit 11 stuff.
         # my ( $self, $in_global_destruction ) = @_;
+        1;
     }
 
     1;

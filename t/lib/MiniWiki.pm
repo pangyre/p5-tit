@@ -6,7 +6,6 @@ package MiniWiki v0.0.1 {
     use Path::Tiny;
     use strictures;
     use Carp;
-    use Encode; # SHOULD NOT BE HERE.
     require Tit::REST;
 
     my $db = path( File::Spec->tmpdir, "miniwiki.sqlite" );
@@ -23,7 +22,7 @@ package MiniWiki v0.0.1 {
     require MiniWiki::Marks;
     add_view Xslate => "Xslate", # NEED TO TRACK THESE TO STDERR/DEBUG TOO.
         path => [ path( $tit->home, "root" ) ],
-        module => ['Text::Xslate::Bridge::Star'],
+        module => ["Text::Xslate::Bridge::Star"],
         function => {
             marks => sub { MiniWiki::Marks::render(+shift, $tit) },
         };
@@ -201,7 +200,3 @@ Ashley Pond V E<middot> MISSING-EMAIL@gmail.com E<middot> L<http://pangyresoft.c
 See L<Tit>.
 
 =cut
-
-        $body = ref $body eq "ARRAY" ? $body->[0]
-            : ref $body eq "HASH" ? $body->{content}
-            : encode("UTF-8", $tit->request->content, Encode::FB_CROAK);

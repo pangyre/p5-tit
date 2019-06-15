@@ -80,6 +80,13 @@ Then visit L<http://localhost:4002/>.
 
 …not written…
 
+=head2 All of the Toy and Test Apps
+
+This B<does not> work but it should. There has to be some kind of
+auto-namespacing when L<Tit> apps are written in C<::main>.
+
+ plackup -I lib t/apps/app.psgi -p 4444
+
 =head1 Code Repository
 
 Public: L<http://github.com/pangyre/p5-tit>, private: L<https://bitbucket.org/pangyre/wren/>.
