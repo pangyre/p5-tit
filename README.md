@@ -31,6 +31,17 @@ vain enough to not settle on one of the current microframeworks.
 
     Namespace, multi-instance of same app…? Relative URIs based on namespace?
 
+- Abuses of interface
+
+    Test things like `get REF, NON-SUB, ARRAY`, etc. The reasonableness
+    of this package rests on good error feedback. It should be
+    self-guiding.
+
+- More toys? All of them?
+
+    MiniWiki, POD viewer, and Unicode Browser are already slated and the
+    first two are done/stubbed. [https://bitbucket.org/pangyre/rfc-toy](https://bitbucket.org/pangyre/rfc-toy),
+
 # Code Repository
 
 [http://github.com/pangyre/p5-tit](http://github.com/pangyre/p5-tit).
