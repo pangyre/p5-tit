@@ -930,6 +930,17 @@ vain enough to not settle on one of the current microframeworks.
 
 Namespace, multi-instance of same app…? Relative URIs based on namespace?
 
+=item Abuses of interface
+
+Test things like C<get REF, NON-SUB, ARRAY>, etc. The reasonableness
+of this package rests on good error feedback. It should be
+self-guiding.
+
+=item More toys? All of them?
+
+MiniWiki, POD viewer, and Unicode Browser are already slated and the
+first two are done/stubbed. L<https://bitbucket.org/pangyre/rfc-toy>,
+
 =back
 
 =head1 Code Repository
