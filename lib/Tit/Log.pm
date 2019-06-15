@@ -1,7 +1,5 @@
 use utf8;
 
-# From Log::Log4perl::Level -> $OFF $FATAL $ERROR $WARN $INFO $DEBUG $TRACE $ALL
-
 package Tit::Log {
     use strictures;
     use feature "state";
@@ -9,7 +7,9 @@ package Tit::Log {
     use open ":std", ":encoding(utf8)";
     use Carp "croak";
     use Scalar::Util "dualvar";
+    # use Sub::Quote; to optimize away the subs? Can you even?
 
+    # When, maybe? https://users.cs.cf.ac.uk/Dave.Marshall/PERL/node36.html
     use constant ALL   => dualvar 0b111, "ALL";
     use constant FATAL => dualvar 0b110, "FATAL";
     use constant ERROR => dualvar 0b101, "ERROR";
@@ -17,9 +17,7 @@ package Tit::Log {
     use constant DEBUG => dualvar  0b10, "DEBUG";
     use constant INFO  => dualvar   0b1, "INFO";
     use constant TRACE => dualvar   0b0, "TRACE";
-
-    # use Carp;
-    # use Sub::Quote; to optimize away the subs? Can you even?
+    # From Log::Log4perl::Level -> $OFF $FATAL $ERROR $WARN $INFO $DEBUG $TRACE $ALL
 
     # Resetting should be allowed with warnings.
     has level =>
@@ -70,7 +68,8 @@ package Tit::Log {
 
     1;
 
-    # CHANGE the warn to a formatted thing with a caller mini-stack of some variety…
+    # CHANGE the warn to a formatted thing with timestamp and a caller
+    # mini-stack of some variety…
 };
 
 __END__

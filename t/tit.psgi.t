@@ -94,14 +94,12 @@ subtest "Housekeeping" => sub {
     ok ! "Tit::Response"->is_psgi_response([ 600 ]), "[ 600 ] ! is_psgi_response";
     ok ! "Tit::Response"->is_psgi_response([]), "[] ! is_psgi_response";
     ok "Tit::Response"->is_psgi_response([ 200, [], [] ]), "[ 200, [], [] ] is_psgi_response";
-
-    done_testing();
+    done_testing(5);
 };
 
 
 subtest "Router/Routes" => sub {
-    plan skip_all => "Maybe in its own ::space for now…";;
-
+    plan skip_all => "Maybe in its own ::space for now…";
     done_testing();
 };
 
@@ -134,27 +132,43 @@ subtest "Built-in logging and log levels" => sub {
     # Capture warnings…
     require Tit::Log;
     use Capture::Tiny "tee"; # "capture";
+    use File::Spec;
 
     my $log = Tit::Log->new;
     cmp_ok $log->level, "==", Tit::Log::WARN(), "Default log level is warn in numeric context";
     cmp_ok $log->level, "eq", Tit::Log::WARN(), "Default log level is warn in string context";
 
-    my ( $out, $err, $return ) = tee {
-        $log->warn("OHAI");
-        $log->debug("DEBUG");
-        eval { $log->fatal("ODAI") };
-        $@ || "[no fatal]";
+    subtest "WARN on default level" => sub {
+        my ( $out, $err, $return ) = tee {
+            $log->warn("OHAI");
+        };
+        like $err, qr/OHAI/, "Caught warning";
+        done_testing(1);
     };
 
-    like $err, qr/OHAI/, "Caught warning";
-    unlike $err, qr/DEBUG/, "Ignored debug";
-    like $return, qr/ODAI/, "Threw fatal"
-        or note $return;
+    subtest "Ignore DEBUG on default level" => sub {
+        my ( $out, $err, $return ) = tee {
+            $log->debug("DEBUG");
+        };
+        unlike $err, qr/DEBUG/, "Ignored debug";
+        done_testing(1);
+    };
 
-    done_testing();
+    # This should be caught *in* the app, que no?
+    subtest "FATAL on default level" => sub {
+        my ( $out, $err, $return ) = tee {
+            eval { $log->fatal("ODAI") };
+            $@ || "[no fatal]";
+        };
+        like $return, qr/ODAI/, "Threw fatal"
+            or note $return;
+        done_testing(1);
+    };
+
+    done_testing(5);
 };
 
-done_testing();
+done_testing(20);
 
 __END__
 

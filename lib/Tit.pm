@@ -311,6 +311,7 @@ package Tit v0.0.1 {
         \%config;
     }
 
+    # has debug =>
     # Set debug level?
     # Same as or different from log level?
     has log =>
