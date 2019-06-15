@@ -399,9 +399,9 @@ package Tit v0.0.1 {
 
         unless ( blessed $view )
         {
-            $view =~ s/\A(?<!\+)/Tit::View::/;
-            eval "use $view;";
-            die $@ if $@;
+            $view =~ s/\A(?!Tit::View::)/Tit::View::/ unless $view =~ s/\A\+//;
+            eval "use $view";
+            confess $@ if $@;
             # $view = $view->new($tit, @arg);
             $view = $view->new(@arg);
         }
@@ -653,7 +653,9 @@ package Tit v0.0.1 {
         require Plack::Session;
         use URI::Escape;
         # $tit = Tit->new;
-        # THIS MUST BE CONFIGURABLE.
+
+        # THIS MUST BE CONFIGURABLE and build now… after all the views
+        # have been added and such.
         my @allowed = ( [ "Xslate", 1.0, "text/html" ],
                         [ "JSON", 1.0, "application/json" ],
                         [ "Plain", 0.5, "text/plain" ] );

@@ -1,0 +1,18 @@
+# Capture this somewhere…
+
+use feature "say";
+use Test::More;
+my %cases = ( "Plain" => "Tit::View::Plain",
+              "+Something" => "Something",
+              "Tit::View::Xslate" => "Tit::View::Xslate",
+              "Xslate" => "Tit::View::Xslate",
+              "+L::On::G::er" => "L::On::G::er" );
+
+for my $config ( keys %cases )
+{
+    my $view = $config;
+    $view =~ s/\A(?!Tit::View::)/Tit::View::/ unless $view =~ s/\A\+//;
+    is $view, $cases{$config}, "$config -> $cases{$config}";
+}
+
+done_testing();
