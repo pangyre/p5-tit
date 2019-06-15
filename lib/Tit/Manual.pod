@@ -44,16 +44,37 @@ L<Text::Xslate::Bridge::Star>???
 
 Mention RFC:Toy? L<https://bitbucket.org/pangyre/rfc-toy>.
 
+The code samples will only work in the L<Tit> distribution directory
+or development repository because tests are not normally installed by
+the various CPAN and Perl installation pipelines.
+
+The best way to get the code is to use git.
+
+ cd /your/personal/code-location
+ git clone git@github.com:pangyre/p5-tit.git
+ cd p5-tit
+
+Then the code examples and URIs that follow should work.
+
 =head2 MiniWiki
 
- plackup -I lib t/apps/mini-wiki.psgi
- t/lib/MiniWiki.pm
+This mini-app is a good example of a lot of code. Fire it up and play
+around and then take a look at the code.
+
+The application code is in L</t/lib/MiniWiki.pm> and its templates are
+in L</t/root/>. This will start the application–
+
+ plackup -I lib t/apps/mini-wiki.psgi -p 4001
+
+Then visit L<http://localhost:4001/>.
 
 =head2 POD viewer
 
 Plain text right now, might keep it that way(?).
 
- t/apps/pod.psgi
+ plackup -I lib t/apps/pod.psgi -p 4002
+
+Then visit L<http://localhost:4002/>.
 
 =head2 Unicode Browser
 
@@ -61,7 +82,7 @@ Plain text right now, might keep it that way(?).
 
 =head1 Code Repository
 
-L<http://github.com/pangyre/p5-tit>, private: L<https://bitbucket.org/pangyre/wren/>.
+Public: L<http://github.com/pangyre/p5-tit>, private: L<https://bitbucket.org/pangyre/wren/>.
 
 =head1 See Also
 

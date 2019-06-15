@@ -4,10 +4,11 @@ use strictures;
 use Tit;
 use Pod::Simple::Text;
 
-get "/pod/{module:.+}" => sub {
+get "/{module:.+}" => sub {
     my $module = +shift->{module};
     my $pod_parser = Pod::Simple::Text->new;
     $pod_parser->output_string(\my $text);
+    # This will prefer blib over lib… :|
     my $path = `perldoc -l $module` || `perldoc -l Tit`;
     $pod_parser->parse_file( `perldoc -l $path` );
     [ 200, [], [ $text ] ];
