@@ -653,6 +653,7 @@ package Tit v0.0.1 {
         require Plack::Session;
         use URI::Escape;
         # $tit = Tit->new;
+        # THIS MUST BE CONFIGURABLE.
         my @allowed = ( [ "Xslate", 1.0, "text/html" ],
                         [ "JSON", 1.0, "application/json" ],
                         [ "Plain", 0.5, "text/plain" ] );

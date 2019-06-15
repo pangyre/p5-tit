@@ -4,6 +4,8 @@ use strictures;
 use Tit;
 use Pod::Simple::Text;
 
+add_view HTML => "Xslate";
+
 get "/{module:.+}" => sub {
     my $module = +shift->{module};
     my $pod_parser = Pod::Simple::Text->new;
@@ -11,7 +13,8 @@ get "/{module:.+}" => sub {
     # This will prefer blib over lib… :|
     my $path = `perldoc -l $module` || `perldoc -l Tit`;
     $pod_parser->parse_file( `perldoc -l $path` );
-    [ 200, [], [ $text ] ];
+    # [ 200, [], [ $text ] ];
+    $tit->response->body([ $text ]);
 };
 
 $tit->to_app;
