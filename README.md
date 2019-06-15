@@ -1,11 +1,12 @@
 # Name
 
-Tit – paridæ, you pervert … a tiny bird of a web app framework.
+Tit – paridæ, you pervert …a tiny bird of a web app framework.
 
 # Synopsis
 
-This is a toy framework. If you want a real framework look at
-[Mojolicious](https://metacpan.org/pod/Mojolicious), [Catalyst](https://metacpan.org/pod/Catalyst), [Dancer2](https://metacpan.org/pod/Dancer2), or similar packages.
+This is a toy framework for building web applications. If you want a
+real framework look at [Mojolicious](https://metacpan.org/pod/Mojolicious), [Catalyst](https://metacpan.org/pod/Catalyst), [Dancer2](https://metacpan.org/pod/Dancer2), or
+similar packages.
 
 See instead the document you really want: [Tit::Manual](https://metacpan.org/pod/Tit::Manual).
 
@@ -14,14 +15,21 @@ See instead the document you really want: [Tit::Manual](https://metacpan.org/pod
 This is quite a bit like—but much less featureful than—lots of
 micro-frameworks. This is probably not what you want. It's alpha
 software until this notice is removed and it's raison d'être is
-sacrficial animal for a planned successor: Wren.
+sacrficial animal for a planned successor: Wren. Wren is approximately
+as likely as Perl 6 was in 2001 so…
 
 Rationale? I've been doing this a loooooooong time. I'm curious about
 how little of it I really need for the things I write and what
 applications can look like when stripped down to the essentials. I'm
 vain enough to not settle on one of the current microframeworks.
 
+# Interface
+
+See [Tit::Manual](https://metacpan.org/pod/Tit::Manual).
+
 # Methods
+
+Top level objects/classes.
 
 …
 

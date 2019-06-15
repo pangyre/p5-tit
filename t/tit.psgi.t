@@ -130,7 +130,32 @@ subtest "More than one app in existence at once" => sub {
     done_testing();
 };
 
+subtest "Built-in logging and log levels" => sub {
+    # Capture warnings…
+    require Tit::Log;
+    use Capture::Tiny "tee"; # "capture";
+
+    my $log = Tit::Log->new;
+    cmp_ok $log->level, "==", Tit::Log::WARN(), "Default log level is warn in numeric context";
+    cmp_ok $log->level, "eq", Tit::Log::WARN(), "Default log level is warn in string context";
+
+    my ( $out, $err, $return ) = tee {
+        $log->warn("OHAI");
+        $log->debug("DEBUG");
+        eval { $log->fatal("ODAI") };
+        $@ || "[no fatal]";
+    };
+
+    like $err, qr/OHAI/, "Caught warning";
+    unlike $err, qr/DEBUG/, "Ignored debug";
+    like $return, qr/ODAI/, "Threw fatal"
+        or note $return;
+
+    done_testing();
+};
+
 done_testing();
 
 __END__
+
 

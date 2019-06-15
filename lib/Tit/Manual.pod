@@ -6,6 +6,10 @@
 
 Tit::Manual – Guide and cookbook for L<Tit>.
 
+=head1 Flow-chart
+
+…Like the one you did for Catalyst. L<dev.catalystframework.org/attachment/wiki/WikiStart/catalyst-flow.png>.
+
 =head1 Controllers/Dispatch
 
 …
