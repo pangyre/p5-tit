@@ -31,6 +31,8 @@ vain enough to not settle on one of the current microframeworks.
 
     Namespace, multi-instance of same app…? Relative URIs based on namespace?
 
+## Tests
+
 - Abuses of interface
 
     Test things like `get REF, NON-SUB, ARRAY`, etc. The reasonableness
@@ -40,7 +42,7 @@ vain enough to not settle on one of the current microframeworks.
 - More toys? All of them?
 
     MiniWiki, POD viewer, and Unicode Browser are already slated and the
-    first two are done/stubbed. [https://bitbucket.org/pangyre/rfc-toy](https://bitbucket.org/pangyre/rfc-toy),
+    first two are done/stubbed. [https://bitbucket.org/pangyre/rfc-toy](https://bitbucket.org/pangyre/rfc-toy).
 
 # Code Repository
 
