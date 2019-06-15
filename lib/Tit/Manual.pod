@@ -78,7 +78,7 @@ Then visit L<http://localhost:4002/>.
 
 =head2 Unicode Browser
 
-…note written…
+…not written…
 
 =head1 Code Repository
 
