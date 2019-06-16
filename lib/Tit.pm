@@ -22,7 +22,7 @@ package Tit::Response {
     sub decoded_content {
         my $self = shift;
         my $charset = [ $self->content_type_charset ]->[1];
-        decode( $charset, $self->content, Encode::FB_CROAK );
+        decode( $charset, $self->content, Encode::FB_CROAK|Encode::LEAVE_SRC );
     }
 
     sub is_psgi_response {
@@ -139,7 +139,7 @@ package Tit::Route {
 
     sub _build__method_path {
         my $self = shift;
-        encode("UTF-8", join("", "/", $self->method, $self->definition), Encode::FB_CROAK );
+        encode("UTF-8", join("", "/", $self->method, $self->definition), Encode::FB_CROAK|Encode::LEAVE_SRC );
     }
 
     1;
@@ -539,8 +539,8 @@ package Tit v0.0.1 {
         my $view = shift || $tit->default_view; # This is also in the dipatch and it only should be I think.
         # Check that the view has been added???
 
-        my $path = decode("UTF-8", join("/", map { s/\{[^}]+\}/*/; $_ } $uri->path_segments), Encode::FB_CROAK);
-        my $definition = decode("UTF-8", join("/", $uri->path_segments), Encode::FB_CROAK);
+        my $path = decode("UTF-8", join("/", map { s/\{[^}]+\}/*/; $_ } $uri->path_segments), Encode::FB_CROAK|Encode::LEAVE_SRC);
+        my $definition = decode("UTF-8", join("/", $uri->path_segments), Encode::FB_CROAK|Encode::LEAVE_SRC);
         my @args = $definition =~ /{([^:}]+)((?::[^}]+)?)}/g;
         ( my $action_path = $definition ) =~ s/{([^:}]+)(?::[^}]+)?}/*/g;
 
@@ -556,7 +556,7 @@ package Tit v0.0.1 {
 
         $tit->router->add_route( $route );
         #warn $route->definition;
-        #push @RAW_ROUTES, join( " ", "GET" => encode("UTF-8", $route->definition, Encode::FB_CROAK) ), $code;
+        #push @RAW_ROUTES, join( " ", "GET" => encode("UTF-8", $route->definition, Encode::FB_CROAK|Encode::LEAVE_SRC) ), $code;
         push @RAW_ROUTES, join(" ", "GET" => $route->definition), $code;
     }
 
@@ -566,8 +566,8 @@ package Tit v0.0.1 {
         my $view = shift || $tit->default_view; # This is also in the dipatch and it only should be I think.
         # Check that the view has been added???
 
-        my $path = decode("UTF-8", join("/", map { s/\{[^}]+\}/*/; $_ } $uri->path_segments), Encode::FB_CROAK);
-        my $definition = decode("UTF-8", join("/", $uri->path_segments), Encode::FB_CROAK);
+        my $path = decode("UTF-8", join("/", map { s/\{[^}]+\}/*/; $_ } $uri->path_segments), Encode::FB_CROAK|Encode::LEAVE_SRC);
+        my $definition = decode("UTF-8", join("/", $uri->path_segments), Encode::FB_CROAK|Encode::LEAVE_SRC);
         my @args = $definition =~ /{([^:]+)((?::[^}]+)?)}/g;
         ( my $action_path = $definition ) =~ s/{([^:]+)(?::[^}]+)?}/*/g;
 
@@ -589,8 +589,8 @@ package Tit v0.0.1 {
     sub put ($&) {
         my $uri = URI->new_abs(+shift, "/");
         my $code = shift; # SHOULD BE ABLE TO OMIT!
-        my $path = decode("UTF-8", join("/", map { s/\{[^}]+\}/*/; $_ } $uri->path_segments), Encode::FB_CROAK);
-        my $definition = decode("UTF-8", join("/", $uri->path_segments), Encode::FB_CROAK);
+        my $path = decode("UTF-8", join("/", map { s/\{[^}]+\}/*/; $_ } $uri->path_segments), Encode::FB_CROAK|Encode::LEAVE_SRC);
+        my $definition = decode("UTF-8", join("/", $uri->path_segments), Encode::FB_CROAK|Encode::LEAVE_SRC);
         my @args = $definition =~ /{([^:]+)((?::[^}]+)?)}/g;
         ( my $action_path = $definition ) =~ s/{([^:]+)(?::[^}]+)?}/*/g;
 
@@ -612,8 +612,8 @@ package Tit v0.0.1 {
     sub del ($&) {
         my $uri = URI->new_abs(+shift, "/");
         my $code = shift;
-        my $path = decode("UTF-8", join("/", map { s/\{[^}]+\}/*/; $_ } $uri->path_segments), Encode::FB_CROAK);
-        my $definition = decode("UTF-8", join("/", $uri->path_segments), Encode::FB_CROAK);
+        my $path = decode("UTF-8", join("/", map { s/\{[^}]+\}/*/; $_ } $uri->path_segments), Encode::FB_CROAK|Encode::LEAVE_SRC);
+        my $definition = decode("UTF-8", join("/", $uri->path_segments), Encode::FB_CROAK|Encode::LEAVE_SRC);
         my @args = $definition =~ /{([^:]+)((?::[^}]+)?)}/g;
         ( my $action_path = $definition ) =~ s/{([^:]+)(?::[^}]+)?}/*/g;
 
@@ -688,8 +688,8 @@ package Tit v0.0.1 {
                 my $captures;
                 for my $k ( keys %{$tmp} )
                 {
-                    my $v = decode("UTF-8", delete $tmp->{$k}, Encode::FB_CROAK);
-                    $k = encode("UTF-8", $k, Encode::FB_CROAK);
+                    my $v = decode("UTF-8", delete $tmp->{$k}, Encode::FB_CROAK|Encode::LEAVE_SRC);
+                    $k = encode("UTF-8", $k, Encode::FB_CROAK|Encode::LEAVE_SRC);
                     $captures->{$k} = $v;
                 }
                 # warn "ROUTE -> ", $route || "[no match]";
@@ -731,7 +731,7 @@ package Tit v0.0.1 {
                     {
                         # croak "WAT?";
                         # $res->body( $view->render($tit) ) unless $tit->response->done;
-                        # $_ = decode( $res->charset, $_, Encode::FB_CROAK ) for @{ $res->body };
+                        # $_ = decode( $res->charset, $_, Encode::FB_CROAK|Encode::LEAVE_SRC ) for @{ $res->body };
                     }
                     $res->_set_request($req); # More like LWP. Why is this down here?
                 }
@@ -740,7 +740,7 @@ package Tit v0.0.1 {
                     # Errors should respect views.
                     $res->status(404);
                     $res->headers([ "Content-Type" => "text/plain; charset=utf-8" ]);
-                    $res->body([ "Not found ", decode("UTF-8", uri_unescape($req->uri->path), Encode::FB_CROAK),
+                    $res->body([ "Not found ", decode("UTF-8", uri_unescape($req->uri->path), Encode::FB_CROAK|Encode::LEAVE_SRC),
                                  " -> ", uri_unescape($req->uri->path),
                                  $/,
                                  " -> ", $req->uri->path,
@@ -775,7 +775,7 @@ package Tit v0.0.1 {
             {
                 # warn "No template: $@";
                 $res->status(404);
-                $res->body([ "Not found ", decode("UTF-8", uri_unescape($req->uri->path), Encode::FB_CROAK) ]);
+                $res->body([ "Not found ", decode("UTF-8", uri_unescape($req->uri->path), Encode::FB_CROAK|Encode::LEAVE_SRC) ]);
                 # $res->body([ "Not found ", $tit->route->action_path ]);
             }
             elsif ( $@ )
@@ -794,7 +794,7 @@ package Tit v0.0.1 {
 
             if ( $req->accept eq "JSON" )
             {
-                #$_ = decode( $res->charset, $_, Encode::FB_CROAK ) for @{ $res->body };
+                #$_ = decode( $res->charset, $_, Encode::FB_CROAK|Encode::LEAVE_SRC ) for @{ $res->body };
             }
 
             $res->finalize;
@@ -858,14 +858,14 @@ package Tit v0.0.1 {
             if ( $response->request->accept eq "JSON" )
             {
                 $response->content_type("application/json; charset=utf-8");
-                # # warn decode("UTF-8", $encoder->encode($entity), Encode::FB_CROAK);
+                # # warn decode("UTF-8", $encoder->encode($entity), Encode::FB_CROAK|Encode::LEAVE_SRC);
                 # $response->body([ $encoder->encode($entity) ]);
                 #no warnings "uninitialized";
                 #my $title = $entity->title;
                 #my $content = decode("UTF-8", $entity->content);
                 # warn $content;
                 # THIS BACK AND FORTH IS NOT RIGHT…
-                # $response->body([ decode("UTF-8", $encoder->encode($entity), Encode::FB_CROAK) ]);
+                # $response->body([ decode("UTF-8", $encoder->encode($entity), Encode::FB_CROAK|Encode::LEAVE_SRC) ]);
                 $response->body([ $encoder->encode($entity) ]);
                 # ^^^ REFACTOR!!!!!!!
             }
