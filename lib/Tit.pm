@@ -912,9 +912,9 @@ Tit – paridæ, you pervert …a tiny bird of a web app framework.
 
 =head1 Synopsis
 
-This is a toy framework for building web applications. If you want a
-real framework look at L<Mojolicious>, L<Catalyst>, L<Dancer2>, or
-similar packages.
+This is aE<mdash>currently half-bakedE<mdash>toy framework for
+building web applications. If you want a real framework look at
+L<Mojolicious>, L<Catalyst>, L<Dancer2>, or similar packages.
 
 See instead the document you really want: L<Tit::Manual>.
 
@@ -961,6 +961,8 @@ Test things like C<get REF, NON-SUB, ARRAY>, etc. The reasonableness
 of this package rests on good error feedback. It should be
 self-guiding.
 
+Doubling of named models and views.
+
 =item More toys? All of them?
 
 MiniWiki, POD viewer, and Unicode Browser are already slated and the
@@ -977,9 +979,9 @@ L<http://github.com/pangyre/p5-tit>.
 L<Plack::App::REST>, L<Plack::Middleware::REST>, L<Dancer2>,
 L<Mojolicious>, L<Flea>, L<Kelp>, et cetera.
 
-=head1 Author
+=head1 Author and Copyright
 
-Ashley Pond V E<middot> ashley@cpan.org.
+©2019 Ashley Pond V E<middot> ashley@cpan.org.
 
 =head1 License
 

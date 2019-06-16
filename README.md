@@ -4,9 +4,9 @@ Tit – paridæ, you pervert …a tiny bird of a web app framework.
 
 # Synopsis
 
-This is a toy framework for building web applications. If you want a
-real framework look at [Mojolicious](https://metacpan.org/pod/Mojolicious), [Catalyst](https://metacpan.org/pod/Catalyst), [Dancer2](https://metacpan.org/pod/Dancer2), or
-similar packages.
+This is a—currently half-baked—toy framework for
+building web applications. If you want a real framework look at
+[Mojolicious](https://metacpan.org/pod/Mojolicious), [Catalyst](https://metacpan.org/pod/Catalyst), [Dancer2](https://metacpan.org/pod/Dancer2), or similar packages.
 
 See instead the document you really want: [Tit::Manual](https://metacpan.org/pod/Tit::Manual).
 
@@ -47,6 +47,8 @@ Top level objects/classes.
     of this package rests on good error feedback. It should be
     self-guiding.
 
+    Doubling of named models and views.
+
 - More toys? All of them?
 
     MiniWiki, POD viewer, and Unicode Browser are already slated and the
@@ -61,9 +63,9 @@ Top level objects/classes.
 [Plack::App::REST](https://metacpan.org/pod/Plack::App::REST), [Plack::Middleware::REST](https://metacpan.org/pod/Plack::Middleware::REST), [Dancer2](https://metacpan.org/pod/Dancer2),
 [Mojolicious](https://metacpan.org/pod/Mojolicious), [Flea](https://metacpan.org/pod/Flea), [Kelp](https://metacpan.org/pod/Kelp), et cetera.
 
-# Author
+# Author and Copyright
 
-Ashley Pond V · ashley@cpan.org.
+©2019 Ashley Pond V · ashley@cpan.org.
 
 # License
 
