@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 use utf8;
-use 5.14.0;
+use 5.12.0;
 use strictures;
 use Tit;
 
